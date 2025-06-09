@@ -1,21 +1,30 @@
-# SNF
-Description: A pure dart/flutter based cross platform (Android and IOS) app
-for SNF by using flutter sound package (Performance may need improvement for supporting more devices)
+# Speech-to-Noise Ratio Feedback (SNF) App 
+Description: A pure Flutter-based cross-platform (Android and IOS) app for SNF by using the Flutter 'Sound' package
 
-Usage: Install Rode Central Mobile aop and make sure the Rode Micro Ai works under the stereo mode (0 gain, 150Hz HPF applied) before using the SNF app
+Hardware: Rode AI Micro
+          Sound Professionals MS-EHB-2
+          Headphones with a 3.5mm jack
 
-Version:
-V1.0: 
-    Structure: 3 page offline system
+Usage: After compiling and installing the app on a mobile phone by using Android Studio, install the Rode Central Mobile app and make sure the Rode Micro Ai works under the stereo mode (0 gain, HPF applied(optional, can select 100Hz)) before launching the SNF app
+
+V1.0 Descriptions: 
+    Structure: 3-page circular offline system
     Settings page:
-        Automatically load previous settings
-        Setting range protection
-    Display page:
-        A 5 sec delay is added to avoid abnormal data displayed when initializing the recorder
-        Two mode with grid and label
-    Summary page;
-        Display the beeping times during one record
+        Own voice detection (OVD) related:
+        1) Coherence threshold: 0 to 1, can be obtained when using Debug Mode
+        2) Variance threshold (dBFS): can be obtained when using Debug Mode
+        Feedback related:
+        1) Alarm threshold (SNR in dB): SNR threshold for triggering the feedback 
+        2) Alarm counter: total window numbers for max SNR calculation
         
-TODO: Right now the code is working under the profile mode. Check sdk / platform versions and permission configuration for final release
+    Display page:
+        Wait 5 seconds for system initialization
+    Summary page;
+        Display the total beeping times during one record
+        
+TODOs:
+    1) May need optimization for low-end mobile phones
+    2) The OVD method may need improvement
+
     
      
